@@ -1,11 +1,10 @@
-const getUserInfo = () => {
+function getUserInfo(){
   $.ajax({
     type: "GET",
     url: "/my/userinfo",
     data: null,
     success: (res) => {
       if (res.status !== 0) return layui.layer.msg("数据请求失败！");
-      console.log(res);
       renderAvatar(res.data);
     },
   });
